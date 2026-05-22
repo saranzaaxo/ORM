@@ -23,12 +23,44 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+## models.py
+```
+from django.db import models
+from django.contrib import admin
 
+class FoodDelivery_DB(models.Model):
+    Order_ID = models.IntegerField(primary_key=True)
+    CustomerName = models.CharField(max_length=30)
+    OrderDate = models.DateField()
+    ItemName = models.CharField(max_length=100)
+    OrderQty = models.IntegerField()
+    UnitPrice = models.FloatField()
+    TotalAmount = models.FloatField()
+    DeliveryAddress = models.CharField(max_length=200)
 
+class FoodDelivery_DBAdmin(admin.ModelAdmin):
+    list_display = (
+        'Order_ID',
+        'CustomerName',
+        'OrderDate',
+        'ItemName',
+        'OrderQty',
+        'UnitPrice',
+        'TotalAmount',
+        'DeliveryAddress'
+    )
+```
+## admin.py
+```
+from django.contrib import admin
+from .models import FoodDelivery_DB, FoodDelivery_DBAdmin
 
+admin.site.register(FoodDelivery_DB, FoodDelivery_DBAdmin)
+```
 ## OUTPUT
 
 Include the screenshot of your admin page.
+<img width="1322" height="629" alt="image" src="https://github.com/user-attachments/assets/168e7473-6d75-4f21-a361-1373adc689b2" />
 
 
 ## RESULT
