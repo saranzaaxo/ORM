@@ -24,7 +24,7 @@ Execute Django admin and create details for 10 books
 
 ## PROGRAM
 ## models.py
-```
+```python
 from django.db import models
 from django.contrib import admin
 
@@ -51,7 +51,7 @@ class FoodDelivery_DBAdmin(admin.ModelAdmin):
     )
 ```
 ## admin.py
-```
+```python
 from django.contrib import admin
 from .models import FoodDelivery_DB, FoodDelivery_DBAdmin
 
